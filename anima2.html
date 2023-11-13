@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 跳动的心 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes heartBeat {
+            0% {
+                transform: scale(.5) rotate(45deg);
+            }
+
+            50% {
+                transform: scale(1) rotate(45deg);
+                opacity: 20%;
+            }
+
+            100% {
+                transform: scale(.5) rotate(45deg);
+            }
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background: #e74c3c;
+            transform: scale(.5) rotate(45deg);
+            animation-name: heartBeat;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .heart::before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            background: #e74c3c;
+            transform: translateX(-50px);
+        }
+
+        .heart::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            background: #e74c3c;
+            transform: translateY(-50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heart"></div>
+</body>
+
+</html>
